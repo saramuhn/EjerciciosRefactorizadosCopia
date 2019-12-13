@@ -1,0 +1,4 @@
+
+ƒsquid:S1845	"`Rename field "frase" to prevent any misunderstanding/clash with field "FRASE" defined on line 7.(ÿùÉçûÿÿÿÿ8¿ëö´ï-
+ksquid:S5361"HReplace this call to "replaceAll()" by a call to the "replace()" method.(§àÖ¨þÿÿÿÿ8¿ëö´ï-
+fsquid:S5361"HReplace this call to "replaceAll()" by a call to the "replace()" method.(ëà»÷8¿ëö´ï-

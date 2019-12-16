@@ -88,13 +88,12 @@ public class EjecutableElectrodomestico {
         for (int i = 0; i < precioTelevision.length; i++)
             System.out.println("Precio final Televisor " + (i + 1) + " es: " + precioTelevision[i]);
         System.out.println("El precio final de Televisores en general es: " + precioTotalTelevision + "\n");
+
         System.out.println("Cantidad de Electrodomesticos fueron: " + contadorElectrodomesticos);
         for (int i = 0; i < precioElectrodomestico.length; i++)
             System.out.println("Precio final Electrodomestico " + (i + 1) + " es: " + precioElectrodomestico[i]);
         System.out.println("El precio de Electrodomesticos es :" + precioTotalElectrodomestico);
         System.out.println("El precio de todos los Electrodomesticos en general es: " + precioTotal);
-
-
     }
 
 

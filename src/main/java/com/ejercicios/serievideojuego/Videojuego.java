@@ -2,18 +2,26 @@ package
         com.ejercicios.serievideojuego;
 
 public class Videojuego implements Entregable {
+    private static final boolean ENTREGADO_POR_DEFECTO=false;
+    private static final int HORAS_ESTIMADAS_POR_DEFECTO=10;
+    private static final int HORAS_MAYOR=1;
+    private static final int HORAS_MENOR=0;
+    private static final int NO_INSTANCIA=-1;
     private String titulo = "";
-    private int horasEstimadas = 10;
-    private boolean entregado = false;
+    private int horasEstimadas;
+    private boolean entregado;
     private String genero = "";
     private String compania = "";
 
     public Videojuego() {
+        this.horasEstimadas=HORAS_ESTIMADAS_POR_DEFECTO;
+        this.entregado=ENTREGADO_POR_DEFECTO;
     }
 
     public Videojuego(String titulo, int horasEstimadas) {
         this.titulo = titulo;
         this.horasEstimadas = horasEstimadas;
+        this.entregado=ENTREGADO_POR_DEFECTO;
     }
 
     public Videojuego(String titulo, int horasEstimadas, String genero, String compania) {
@@ -21,6 +29,7 @@ public class Videojuego implements Entregable {
         this.horasEstimadas = horasEstimadas;
         this.genero = genero;
         this.compania = compania;
+        this.entregado=ENTREGADO_POR_DEFECTO;
     }
 
     public String getTitulo() {
@@ -81,15 +90,15 @@ public class Videojuego implements Entregable {
     }
 
     @Override
-    public int compareTo(Object a) {
-        if (a instanceof Videojuego) {
-            Videojuego videojuego = (Videojuego) a;
+    public int compareTo(Object videojuegoAComparar) {
+        if (videojuegoAComparar instanceof Videojuego) {
+            Videojuego videojuego = (Videojuego) videojuegoAComparar;
             if (horasEstimadas >=  videojuego.getHorasEstimadas())
-                return 1;
+                return HORAS_MAYOR;
             else
-                return 0;
+                return HORAS_MENOR;
         }
-        return -1;
+        return NO_INSTANCIA;
     }
 
 }

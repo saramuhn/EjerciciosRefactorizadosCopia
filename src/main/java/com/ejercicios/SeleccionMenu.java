@@ -115,8 +115,8 @@ public class SeleccionMenu {
                     electrodomestico.ejecutar();
                     continue;
                 case SERIE_VIDEOJUEGO:
-                    EjecutableSerieVideojuego dieciocho = new EjecutableSerieVideojuego();
-                    dieciocho.ejecutar();
+                    EjecutableSerieVideojuego serieVideojuego = new EjecutableSerieVideojuego();
+                    serieVideojuego.ejecutar();
                     continue;
                 default:
                     opcionMenu = SALIR;

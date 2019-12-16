@@ -24,14 +24,16 @@ public class Electrodomestico {
 
 
     public Electrodomestico() {
+        this.color=COLOR_POR_DEFECTO;
+        this.peso = PESO_POR_DEFECTO;
         comprobarConsumoPrecio();
         comprobarColor();
-        this.peso = PESO_POR_DEFECTO;
     }
 
     public Electrodomestico(double precio, double peso) {
         this.precio = precio;
         this.peso = peso;
+        this.color=COLOR_POR_DEFECTO;
         comprobarConsumoPrecio();
         comprobarColor();
     }
@@ -95,16 +97,15 @@ public class Electrodomestico {
     }
 
     private void comprobarColor() {
-        color=color.toUpperCase();
-        if ("BLANCO".equals(color)) {
+        if ("BLANCO".equals(color.toUpperCase())) {
             color = COLOR_POR_DEFECTO;
-        } else if ("NEGRO".equals(color)) {
+        } else if ("NEGRO".equals(color.toUpperCase())) {
             color = "Negro";
-        } else if ("ROJO".equals(color)) {
+        } else if ("ROJO".equals(color.toUpperCase())) {
             color = "Rojo";
-        } else if ("AZUL".equals(color)) {
+        } else if ("AZUL".equals(color.toUpperCase())) {
             color = "Azul";
-        } else if ("GRIS".equals(color)) {
+        } else if ("GRIS".equals(color.toUpperCase())) {
             color = "Gris";
         } else {
             color = COLOR_POR_DEFECTO;

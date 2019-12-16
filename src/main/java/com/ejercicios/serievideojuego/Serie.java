@@ -1,18 +1,27 @@
 package com.ejercicios.serievideojuego;
 
 public class Serie implements Entregable {
+    private static final int TEMPORADAS_MAYOR=1;
+    private static final int TEMPORADAS_MENOR=0;
+    private static final int NO_INSTANCIA=-1;
+    private static final int NUMERO_TEMPORADAS_POR_DEFECTO=3;
+    private static final boolean ENTREGADO_POR_DEFECTO=false;
     private String titulo = "";
-    private int numeroTemporadas = 3;
-    private boolean entregado = false;
+    private int numeroTemporadas;
+    private boolean entregado;
     private String genero = "";
     private String creador = "";
 
     public Serie() {
+        this.entregado=ENTREGADO_POR_DEFECTO;
+        this.numeroTemporadas=NUMERO_TEMPORADAS_POR_DEFECTO;
     }
 
     public Serie(String titulo, String creador) {
         this.titulo = titulo;
         this.creador = creador;
+        this.entregado=ENTREGADO_POR_DEFECTO;
+        this.numeroTemporadas=NUMERO_TEMPORADAS_POR_DEFECTO;
     }
 
     public Serie(String titulo, int numeroTemporadas, String genero, String creador) {
@@ -20,6 +29,7 @@ public class Serie implements Entregable {
         this.numeroTemporadas = numeroTemporadas;
         this.genero = genero;
         this.creador = creador;
+        this.entregado=ENTREGADO_POR_DEFECTO;
     }
 
     public String getTitulo() {
@@ -78,14 +88,14 @@ public class Serie implements Entregable {
     }
 
     @Override
-    public int compareTo(Object a) {
-        if (a instanceof Serie) {
-            Serie serie = (Serie) a;
+    public int compareTo(Object serieAComparar) {
+        if (serieAComparar instanceof Serie) {
+            Serie serie = (Serie) serieAComparar;
             if (numeroTemporadas >= serie.getNumeroTemporadas())
-                return 1;
+                return TEMPORADAS_MAYOR;
             else
-                return 0;
+                return TEMPORADAS_MENOR;
         }
-        return -1;
+        return NO_INSTANCIA;
     }
 }
